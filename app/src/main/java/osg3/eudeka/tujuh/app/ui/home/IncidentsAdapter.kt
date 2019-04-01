@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_home_incidents.view.*
 import osg3.eudeka.tujuh.app.R
 
@@ -22,6 +24,13 @@ class IncidentsAdapter(val context: Context, val incidents: ArrayList<String>) :
 
     override fun onBindViewHolder(holder: IncidentsViewHolder, position: Int) {
         holder.tvIncidentTitle.text = incidents[position]
+        holder.itemView.setOnClickListener {
+            Snackbar.make(
+                (context as HomeActivity).cl_home_activity,
+                "Go to ${incidents[position]} details screen",
+                Snackbar.LENGTH_SHORT
+            ).show()
+        }
     }
 
     class IncidentsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
