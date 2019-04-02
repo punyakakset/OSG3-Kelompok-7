@@ -1,18 +1,18 @@
 package osg3.eudeka.tujuh.app.ui.home
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_home_incidents.view.*
+import osg3.eudeka.tujuh.app.GlideApp
 import osg3.eudeka.tujuh.app.R
 import osg3.eudeka.tujuh.app.data.Model.Incident
+import osg3.eudeka.tujuh.app.ui.details.DetailsActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -36,16 +36,20 @@ class IncidentsAdapter(val context: Context, val incidents: List<Incident>) :
         holder.tvIncidentTime.text =
             if (incident.occurredAt != 0L) "Waktu: ${dateFormat.format(Date(incident.occurredAt * 1000))}" else "Waktu: -"
         if (incident.imageUrl.isNotEmpty())
-            Glide.with(context).load(incident.imageUrl).centerCrop().into(holder.ivIncidentImgThumb)
+            GlideApp.with(context).load(incident.imageUrl).centerCrop().into(holder.ivIncidentImgThumb)
         else
             holder.ivIncidentImgThumb.setImageResource(R.drawable.ic_launcher_background)
 
         holder.itemView.setOnClickListener {
-            Snackbar.make(
-                (context as HomeActivity).cl_home_activity,
-                "Go to ${incident.id} details screen",
-                Snackbar.LENGTH_SHORT
-            ).show()
+            //            Snackbar.make(
+//                (context as HomeActivity).cl_home_activity,
+//                "Go to ${incident.id} details screen",
+//                Snackbar.LENGTH_SHORT
+//            ).show()
+            var intent = Intent(context, DetailsActivity::class.java).apply {
+                putExtra(DetailsActivity.INCIDENT_PARCEL, incident)
+            }
+            context.startActivity(intent)
         }
     }
 

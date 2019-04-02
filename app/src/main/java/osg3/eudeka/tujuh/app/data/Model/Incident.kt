@@ -1,5 +1,9 @@
 package osg3.eudeka.tujuh.app.data.Model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class Incident(
     val id: Int,
     val title: String = "",
@@ -10,4 +14,4 @@ data class Incident(
     val type: String = "",
     val locationType: String = "",
     val imageUrl: String = ""
-)
+) : Parcelable
