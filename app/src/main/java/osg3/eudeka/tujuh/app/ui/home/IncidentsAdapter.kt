@@ -10,8 +10,9 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_home_incidents.view.*
 import osg3.eudeka.tujuh.app.R
+import osg3.eudeka.tujuh.app.data.Model.Incident
 
-class IncidentsAdapter(val context: Context, val incidents: ArrayList<String>) :
+class IncidentsAdapter(val context: Context, val incidents: List<Incident>) :
     RecyclerView.Adapter<IncidentsAdapter.IncidentsViewHolder>() {
 
     override fun getItemCount(): Int {
@@ -23,7 +24,7 @@ class IncidentsAdapter(val context: Context, val incidents: ArrayList<String>) :
     }
 
     override fun onBindViewHolder(holder: IncidentsViewHolder, position: Int) {
-        holder.tvIncidentTitle.text = incidents[position]
+        holder.tvIncidentTitle.text = incidents[position].title
         holder.itemView.setOnClickListener {
             Snackbar.make(
                 (context as HomeActivity).cl_home_activity,

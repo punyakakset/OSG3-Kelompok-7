@@ -13,7 +13,7 @@ class IncidentsResponse {
     inner class Incident {
         @SerializedName("id")
         @Expose
-        var id: Int? = null
+        var id: Int = 0
         @SerializedName("title")
         @Expose
         var title: String? = null
@@ -25,13 +25,13 @@ class IncidentsResponse {
         var address: String? = null
         @SerializedName("occurred_at")
         @Expose
-        var occurredAt: Int? = null
+        var occurredAt: Int = 0
         @SerializedName("updated_at")
         @Expose
-        var updatedAt: Int? = null
+        var updatedAt: Int = 0
         @SerializedName("url")
         @Expose
-        var url: String? = null
+        var url: String = ""
         @SerializedName("source")
         @Expose
         var source: Source? = null
@@ -40,25 +40,25 @@ class IncidentsResponse {
         var media: Media? = null
         @SerializedName("location_type")
         @Expose
-        var locationType: Any? = null
+        var locationType: String? = null
         @SerializedName("location_description")
         @Expose
-        var locationDescription: Any? = null
+        var locationDescription: String? = null
         @SerializedName("type")
         @Expose
-        var type: String? = null
+        var type: String = ""
         @SerializedName("type_properties")
         @Expose
-        var typeProperties: Any? = null
+        var typeProperties: String? = null
     }
 
     inner class Media {
         @SerializedName("image_url")
         @Expose
-        var imageUrl: Any? = null
+        var imageUrl: String? = null
         @SerializedName("image_url_thumb")
         @Expose
-        var imageUrlThumb: Any? = null
+        var imageUrlThumb: String? = null
     }
 
     inner class Source {

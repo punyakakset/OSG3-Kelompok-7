@@ -9,7 +9,7 @@ import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("/incidents")
+    @GET("incidents")
     fun getRecentIncidents(): Call<IncidentsResponse>
 
     companion object Factory {
