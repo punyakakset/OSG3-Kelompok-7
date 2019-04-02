@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:cardElevation="4dp">
+    >
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp">
+        <ImageView
+                android:id="@+id/iv_incident_img_thumb"
+                android:src="@drawable/ic_launcher_background"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginBottom="8dp"/>
+        <TextView
+                android:id="@+id/tv_incident_title"
+                android:text="Title"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" android:layout_margin="4dp"/>
+        <TextView
+                android:id="@+id/tv_incident_address"
+                android:text="Address"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" android:layout_margin="4dp"/>
+        <TextView
+                android:id="@+id/tv_incident_type"
+                android:text="Type"
+                style="@style/TextAppearance.MaterialComponents.Chip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" android:textAlignment="textEnd" android:layout_margin="4dp"/>
+        <TextView
+                android:id="@+id/tv_incident_time"
+                android:text="Occurred at"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" android:textAlignment="textEnd" android:layout_margin="4dp"/>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
