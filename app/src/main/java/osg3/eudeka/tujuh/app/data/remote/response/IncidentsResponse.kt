@@ -25,10 +25,10 @@ class IncidentsResponse {
         var address: String? = null
         @SerializedName("occurred_at")
         @Expose
-        var occurredAt: Int = 0
+        var occurredAt: Long = 0L
         @SerializedName("updated_at")
         @Expose
-        var updatedAt: Int = 0
+        var updatedAt: Long = 0L
         @SerializedName("url")
         @Expose
         var url: String = ""

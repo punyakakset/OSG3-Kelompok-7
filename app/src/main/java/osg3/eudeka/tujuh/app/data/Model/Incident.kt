@@ -5,8 +5,8 @@ data class Incident(
     val title: String = "",
     val description: String = "",
     val address: String = "",
-    val occurredAt: Int = 0,
-    val updatedAt: Int = 0,
+    val occurredAt: Long = 0L,
+    val updatedAt: Long = 0L,
     val type: String = "",
     val locationType: String = "",
     val imageUrl: String = ""
